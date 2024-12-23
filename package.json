@@ -1,0 +1,15 @@
+{
+  "name": "backend_journey",
+  "version": "1.0.0",
+  "description": "The first step towards the backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "backend"
+  ],
+  "author": "Harsh Mane",
+  "license": "ISC"
+}
