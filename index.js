@@ -19,6 +19,19 @@ app.get('/', (req, res) => {
     
 });
 
+
+app.get('/edit/:filename', (req, res) => {
+    res.render("edit",{filename: req.params.filename})
+});
+
+app.post('/edit', (req, res) => {
+    fs.rename(`./files/${req.body.previousName}`, `./files/${req.body.newName}`, function(err) {
+        if (err) throw err;
+        console.log('File Renamed!');
+        res.redirect('/');
+    });
+});
+
 app.get('/files/:filename', (req, res) => {
     fs.readFile(`./files/${req.params.filename}`, 'utf-8', function(err, data) {
         if (err) throw err;
